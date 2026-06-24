@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RifqySpace | Minimalist Cloud</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div id="login-view" class="view active">
+        <div class="login-card">
+            <div class="logo-container">
+                <i class="ph ph-cloud-arrow-up logo-icon"></i>
+            </div>
+            <h2>RifqySpace</h2>
+            <p class="subtitle">Akses penyimpanan terpusat Anda.</p>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="ph ph-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Anda" required>
+                </div>
+                <div class="input-group">
+                    <i class="ph ph-lock-key"></i>
+                    <input type="password" id="password" placeholder="Kata Sandi" required>
+                </div>
+                <button type="submit" id="login-btn">Masuk</button>
+            </form>
+            <p id="login-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="dashboard-view" class="view hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="ph ph-cloud logo-icon-small"></i>
+                <span class="brand-name">RifqySpace</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active"><i class="ph ph-squares-four"></i> Beranda</a>
+                <a href="#" class="nav-item"><i class="ph ph-folder"></i> Semua File</a>
+                <a href="#" class="nav-item"><i class="ph ph-trash"></i> Tong Sampah</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="nav-item text-danger"><i class="ph ph-sign-out"></i> Keluar</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>File Saya</h1>
+                <div class="topbar-actions">
+                    <button id="sync-btn" class="btn btn-outline"><i class="ph ph-arrows-clockwise"></i> Sinkronisasi</button>
+                    <input type="file" id="file-upload-input" class="hidden">
+                    <button id="upload-btn" class="btn btn-primary"><i class="ph ph-upload-simple"></i> Unggah File</button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="table-container">
+                    <table class="file-table">
+                        <thead>
+                            <tr>
+                                <th>Nama File</th>
+                                <th>Ukuran</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="file-list">
+                            <tr>
+                                <td colspan="3" class="loading-cell">Memuat data dari server...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
