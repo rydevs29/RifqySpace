@@ -1,0 +1,216 @@
+/* Variabel Warna & Font */
+:root {
+    --bg-main: #FAFAFA;
+    --bg-card: #FFFFFF;
+    --text-dark: #111827;
+    --text-muted: #6B7280;
+    --accent: #000000;
+    --accent-hover: #374151;
+    --border: #E5E7EB;
+    --danger: #EF4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hidden { display: none !important; }
+.view { height: 100%; width: 100%; }
+
+/* --- TAMPILAN LOGIN --- */
+#login-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: var(--bg-card);
+    padding: 3rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-container { margin-bottom: 1.5rem; }
+.logo-icon { font-size: 3rem; color: var(--accent); }
+.subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem; margin-top: 0.5rem; }
+
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus { border-color: var(--accent); }
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover { background: var(--accent-hover); }
+.error-msg { color: var(--danger); font-size: 0.85rem; margin-top: 1rem; }
+
+/* --- TAMPILAN DASHBOARD --- */
+#dashboard-view {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-nav {
+    padding: 1.5rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s;
+    background: transparent;
+    text-align: left;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: var(--bg-main);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.text-danger { color: var(--danger); }
+.text-danger:hover { background: #FEF2F2; color: var(--danger); }
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+}
+
+.topbar-actions { display: flex; gap: 1rem; }
+
+.btn { width: auto; padding: 0.6rem 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;}
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-dark); }
+.btn-outline:hover { background: var(--bg-main); }
+.btn-primary { background: var(--accent); }
+
+.content-area {
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Tabel */
+.table-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.file-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.file-table th {
+    padding: 1rem 1.5rem;
+    background: var(--bg-main);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.file-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+.file-table tr:hover { background: var(--bg-main); }
+.file-table tr:last-child td { border-bottom: none; }
+
+.file-name-cell { display: flex; align-items: center; gap: 0.8rem; font-weight: 500;}
+.loading-cell { text-align: center; color: var(--text-muted); padding: 3rem !important; }
+
+.action-btn {
+    background: transparent;
+    color: var(--text-muted);
+    padding: 0.4rem;
+    border-radius: 6px;
+}
+.action-btn:hover { background: var(--border); color: var(--accent); }
